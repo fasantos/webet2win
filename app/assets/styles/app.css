@@ -28,3 +28,91 @@
   content: "";
   padding: 0;
 }
+
+
+h3{
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.margin-fix-top-lg{
+  margin-top: 100px;
+}
+
+.margin-fix-top-md{
+  margin-top: 150px;
+}
+
+.margin-fix-top-sm{
+  margin-top: 200px;
+}
+
+.margin-fix-top-xs{
+  margin-top: 100px;
+}
+
+.margin-fix-bottom-lg{
+  margin-bottom: 80px;
+}
+
+.margin-fix-bottom-md{
+  margin-bottom: 80px;
+}
+
+.margin-fix-bottom-sm{
+  margin-bottom: 100px;
+}
+
+.margin-fix-bottom-xs{
+  margin-bottom: 150px;
+}
+
+#calculator{margin: 1%}
+
+.aboutus{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.icon, input, select{
+  border-radius: 4px;
+  padding: 0px;
+}
+
+input.input-fixer, select.input-fixer{
+  padding: 0px;
+}
+
+.btn-group{
+  margin-left: 10%;
+}
+
+.btn-group .btn-xs{
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+
+.navbar-text{
+  margin-left: 0px;
+}
+
+.adds{
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.stub{
+  visibility: hidden;
+}
+
+.glyphicon{
+  font-size: 20px;
+}
+
+.modal-header{
+  font-family: "Nunito", sans-serif;
+}
+
+.modal-header{
+  font-family: "Comic Sans MS", "Courier New", Courier, sans-serif;
+}
