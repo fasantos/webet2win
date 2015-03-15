@@ -1,1 +1,36 @@
-<h1>home</h1>
+<div class="container main">
+	<div class="row">
+		<div class="col-md-4" ng-controller="SystemController as systemCtrl">
+			<div ng-repeat="text in systemCtrl.pagecontent.text">
+				<h5 class="text-center"><a href="en/works.html">{{text.title}}</a></h5>
+				<p class="text-justify" ng-repeat="lang in text.preview">{{lang.paragraf}}</p>
+				<a href="en/works.html" class="btn btn-default">Read More</a>
+			</div>
+		</div>
+		<div class="col-md-4" ng-controller="StartController as startCtrl">
+			<div ng-repeat="text in startCtrl.pagecontent.text">
+				<h5 class="text-center"><a href="en/start.html">{{text.title}}</a></h5>
+				<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
+				<a href="en/start.html" class="btn btn-default">Read More</a>
+			</div>
+		</div>
+		<div class="col-md-4" ng-controller="DepositController as depositCtrl">
+			<div ng-repeat="text in depositCtrl.pagecontent.text">
+				<h5 class="text-center"><a href="">{{text.title}}</a></h5>
+				<p class="text-center">{{text.firstparagraf}}</p>
+				<p class="text-center" ng-repeat="method in text.methods">
+					<b>{{method.prefix}}</b>
+						<a ng-repeat="link in method.links" ng-href="{{link.href}}" target="_Blank">
+							<img ng-src="{{link.img}}" width="65" height="35">
+						</a>
+					<b>{{method.sufix}}</b>
+				</p>
+			</div>
+			<a href="en/deposits.html" class="btn btn-default">Read More</a>
+		</div>
+	</div>
+	<p class="text-center" class="row">
+		<br> <br> <br>
+		Live scores powered by <a href="http://www.livescore.in/" title="Live scores" target="_blank">www.livescore.in</a>
+	</p>
+</div>

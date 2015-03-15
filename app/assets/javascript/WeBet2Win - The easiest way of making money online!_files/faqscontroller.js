@@ -4,7 +4,7 @@ angular.module('WeBet2Win').controller('FaqsController', function(){
 
 var faqspagecontent = 
 	{
-		text: [{
+		texts: [{
 			lang: 'en',
 			title: "Frequently Asked Questions",
 			questions: [{

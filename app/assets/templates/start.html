@@ -1,1 +1,36 @@
-<h1>start</h1>
+<div class="container main" ng-controller="StartController as startCtrl">
+	<div class="row">
+		<div class="col-md-8" ng-repeat="text in startCtrl.pagecontent.text">
+			<h5 class="text-center"><a href="">{{text.title}}</a></h5>
+			<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
+			<hr>
+			<p class="text-center" ng-repeat="lang in text.betfairtext"><b>{{lang.name}}:</b> {{lang.paragraf}}</p>			
+			<div class="text-center visible-md-block hidden-sm hidden-xs">{{startCtrl.pagecontent.betfairbanner.big}}</div>
+			<div class="text-center visible-xs-block hidden-md hidden-lg text-center">{{startCtrl.pagecontent.betfairbanner.small}}</div>
+			<hr>
+			<p class="text-justify" ng-repeat="lang in text.content"><b>{{lang.name}}</b>{{lang.paragraf}}</p>
+			<hr>
+			<p class="text-justify" ng-repeat="lang in text.levelstext">{{lang.paragraf}}</p>
+			<p class="text-center">
+				 <a class="col-md-2 btn btn-info btn-large" href="start/bonus0_50.html">0-50</a>
+				 <a class="col-md-2 btn btn-info btn" href="start/houses.html">51-150</a>
+				 <a class="col-md-2 btn btn-info btn" href="start/houses.html">151-250</a>
+				 <a class="col-md-2 btn btn-info btn" href="start/houses.html">251-500</a>
+				 <a class="col-md-2 btn btn-info btn" href="start/houses.html">501-1000</a>
+				 <a class="col-md-2 btn btn-info btn" href="start/houses.html">1000+</a>
+			</p>
+			<br><br><hr>						
+			<div class="row">
+				<abbr title="HOW DOES IT ALL WORK?">
+					<a class="glyphicon glyphicon-arrow-left col-xs-6 text-left" href="works.html"></a>
+				</abbr>
+				<abbr title="HOW TO MAKE DEPOSITS">
+					<a class="glyphicon glyphicon-arrow-right col-xs-6 text-right" href="deposits.html"></a>
+				</abbr>
+			</div>
+		</div>
+		<div class="col-md-4 ">
+			<div class="adds" ng-repeat="banner in systemCtrl.pagecontent.sidebanners">{{banner.code}}</div>
+		</div>
+	</div>
+</div>

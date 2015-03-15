@@ -1,1 +1,19 @@
-<h1>system</h1>
+<div class="container main" ng-controller="SystemController as systemCtrl">
+	<div class="row">
+		<div class="col-md-8" ng-repeat="text in systemCtrl.pagecontent.text">
+			<h5 class="text-center"><a href="">{{text.title}}</a></h5>
+			<p class="text-justify" ng-repeat="lang in text.preview">{{lang.paragraf}}</p>
+			<p class="text-justify" ng-repeat="lang in text.content">{{lang.paragraf}}</p>
+			
+			<hr>
+			<div class="row">
+				<abbr title="START EARNING NOW!">
+					<a class="glyphicon glyphicon-arrow-right col-xs-12 text-right" href="start"></a>
+				</abbr>
+			</div>
+		</div>
+		<div class="col-md-4 ">
+			<div class="adds" ng-repeat="banner in systemCtrl.pagecontent.sidebanners">{{banner.code}}</div>
+		</div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-angular.module('WeBet2Win').config(function($routeProvider){
+angular.module('WeBet2Win').config(['$routeProvider', function($routeProvider){
 	$routeProvider
 		.when('/', {
 			redirectTo: '/home'
@@ -56,8 +56,8 @@ angular.module('WeBet2Win').config(function($routeProvider){
 
 		.when('/copyrights', {
 			templateUrl: "assets/templates/copyrights.html",
-			controller: "FaqsController"
+			controller: "CopyrightsController"
 		})
 
 		.otherwise({redirectTo: '/home'});
-});
+}]);
