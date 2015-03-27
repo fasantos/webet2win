@@ -1,17 +1,17 @@
 <div class="container main" ng-controller="FaqsController as faqsCtrl">
 	<div ng-repeat="text in faqsCtrl.pagecontent.text">
-		<h2 ><a name="top">{{text.title}}</a></h2>
-		<ol>
-			<li ng-repeat="question in text.questions"><strong><a href="">{{question.question}}</a></strong></li>
-		</ol>
-		<hr>
-		<ol>
+		<h2 href=""><a>{{text.title}}</a></h2><br>
+		<ul style="list-style-type: none">
 			<li ng-repeat="question in text.questions">
-				<h3><a name="how">{{question.question}}</a></h3>
-				<p>{{question.answer}}</p>
-				<h5><a href="#top">Back to Top</a></h5>
-				<hr>
+				<div ng-click="showAnswer = !showAnswer">
+					<small class="glyphicon glyphicon-plus glyp-faq" ng-show="!showAnswer"></small>
+					<small class="glyphicon glyphicon-minus glyp-faq" ng-show="showAnswer"></small>
+					<strong>
+						<a href="">{{question.question}}</a></strong>
+					<p ng-show="showAnswer">{{question.answer}}</p>
+					<hr>
+				</div>
 			</li>
-		</ol>
+		</ul>
 	</div>
 </div>

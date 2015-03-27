@@ -1,5 +1,9 @@
-angular.module('WeBet2Win').controller('SystemController', function(){
-	this.pagecontent = systempagecontent;
+angular.module('WeBet2Win').controller('SystemController', function($sce){
+	this.pagecontent = systempagecontent.text;
+	this.sidebanners = [];
+	for (var i = 0; i < systempagecontent.sidebanners.length; i++) {
+		this.sidebanners.push($sce.trustAsHtml(systempagecontent.sidebanners[i].code));
+	};
 });
 
 var systempagecontent = 
@@ -32,14 +36,11 @@ var systempagecontent =
 				paragraf: "In every bonus that you will try to release, you should expect your profit (with 0% risk involved) to be around 80-90% of the bonus amount (for example, when trying to release a 30€ bonus you will actually be able to transfer around 26€ to your bank account). As you will be able to confirm, when using the WeBet2Win Calculator, you should try to get the smallest possible difference between the Back and the Lay bets (for example a good pair of odds would be a Back bet with odds of 3.0 and a Lay bet with odds of 3.1). The smaller the difference, the higher your profit will be (so it's worth spending a few minutes looking for the best combination)."
 			}] 
 		}],
-		//meter numa directiva?..
 		sidebanners:[{
-				code: '<!-- Affiliate Code Do NOT Modify--><iframe allowtransparency="true" src="http://affiliates.bet-at-home.com/processing/impressions.asp?btag=a_52767b_33681&aid=" width="300"  height="250"  scrolling="no" frameborder="no" style="border-width:0"></iframe><!-- End affiliate Code-->'
+				code: '<div style="FONT: 11px tahoma,sans-serif; WIDTH: 300px; TEXT-ALIGN: center"><a href="http://online.titanbet.com/promoRedirect?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==" title="Free Bonus at Titan Bet"><img src="http://online.titanbet.com/promoLoadDisplay?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==" width="300" height="250" border="0" alt="Titan Bet Free Bonus"/></a><br/><a href="http://online.titanbet.com/promoRedirect?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==">Claim your Titan Bet Bonus</a></div>' 
 			},{
 				code: '<object type="application/x-shockwave-flash" id="a7350c31e212d447c9bae5b1a68bc9f56" data="http://imstore.bet365affiliates.com/365_045355-424-72-2-149-1-29503.aspx" width="300" height="250"><param name="movie" value="http://imstore.bet365affiliates.com/365_045355-424-72-2-149-1-29503.aspx" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="external" /><a href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=29503&amp;AffiliateCode=365_045355&amp;CID=194&amp;DID=72&amp;TID=1&amp;PID=149&amp;LNG=1" target="_blank"><img src="http://imstore.bet365affiliates.com/?AffiliateCode=365_045355&amp;CID=194&amp;DID=72&amp;TID=1&amp;PID=149&amp;LNG=1" style="border:0;" alt="bet365"></img></a></object>'
 			},{
-				code: '<div style="FONT: 11px tahoma,sans-serif; WIDTH: 300px; TEXT-ALIGN: center"><a href="http://online.titanbet.com/promoRedirect?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==" title="Free Bonus at Titan Bet"><img src="http://online.titanbet.com/promoLoadDisplay?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==" width="300" height="250" border="0" alt="Titan Bet Free Bonus"/></a><br/><a href="http://online.titanbet.com/promoRedirect?key=ej0yMTg1MDA2NjYzJmw9MCZwPTUyMTg3NA%3D%3D==">Claim your Titan Bet Bonus</a></div>' 
-			},{
-				code: '<iframe allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=8291&pid=17116" width="300" height="250" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>'
+				code: '<!-- Affiliate Code Do NOT Modify--><iframe allowtransparency="true" src="http://affiliates.bet-at-home.com/processing/impressions.asp?btag=a_52767b_33681&aid=" width="300"  height="250"  scrolling="no" frameborder="no" style="border-width:0"></iframe><!-- End affiliate Code-->'
 			}]
 	};

@@ -1,6 +1,6 @@
 <div class="container main" ng-controller="StartController as startCtrl">
 	<div class="row">
-		<div class="col-md-8" ng-repeat="text in startCtrl.pagecontent.text">
+		<div class="col-md-8" ng-repeat="text in startCtrl.pagecontent">
 			<h5 class="text-center"><a href="">{{text.title}}</a></h5>
 			<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
 			<hr>
@@ -22,15 +22,17 @@
 			<br><br><hr>						
 			<div class="row">
 				<abbr title="HOW DOES IT ALL WORK?">
-					<a class="glyphicon glyphicon-arrow-left col-xs-6 text-left" href="#/system"></a>
+					<a class="glyphicon glyphicon-arrow-left glyp-nav col-xs-6 text-left" href="#/system"></a>
 				</abbr>
 				<abbr title="HOW TO MAKE DEPOSITS">
-					<a class="glyphicon glyphicon-arrow-right col-xs-6 text-right" href="#/deposit"></a>
+					<a class="glyphicon glyphicon-arrow-right glyp-nav col-xs-6 text-right" href="#/deposit"></a>
 				</abbr>
 			</div>
 		</div>
 		<div class="col-md-4 ">
-			<div class="adds" ng-repeat="banner in systemCtrl.pagecontent.sidebanners">{{banner.code}}</div>
+			<div class="adds" ng-repeat="sidebanner in startCtrl.sidebanners">
+				<div ng-bind-html="sidebanner"></div>
+			</div>
 		</div>
 	</div>
 </div>

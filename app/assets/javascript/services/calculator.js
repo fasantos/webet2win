@@ -95,7 +95,7 @@ var american = function(){
 }
 
 //Ajax currency converter handler
-google.load("jquery", "1.2.6");function gp_currencySymbols() {
+/*google.load("jquery", "1.2.6");function gp_currencySymbols() {
 	$.getJSON("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?",
 		function(data){
 			var currencyCode = geoplugin_currencyCode();
@@ -119,7 +119,7 @@ google.load("jquery", "1.2.6");function gp_currencySymbols() {
 			$(fromCurr).appendTo("#gp_from");
 			$(toCurr).appendTo("#gp_to");
 		});
-};
+};*/
 function gp_convertIt() {
 	if (!document.getElementById('gp_amount').value){
 		return false;

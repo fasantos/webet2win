@@ -83,30 +83,36 @@ input.input-fixer, select.input-fixer{
   padding: 0px;
 }
 
-.btn-group{
-  margin-left: 10%;
+.social img{
+  width: 30px;
+  height: 30px;
 }
 
-.btn-group .btn-xs{
-  margin-top: 8px;
+.navbar-fixed-bottom .col-md-4{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.navbar-fixed-bottom p{
+  padding-top: 1%;
+  padding-bottom: 1%;
   margin-bottom: 0px;
 }
 
-.navbar-text{
-  margin-left: 0px;
-}
-
 .adds{
-  margin-top: 15%;
-  margin-bottom: 10%;
+  margin: 10%;
 }
 
 .stub{
   visibility: hidden;
 }
 
-.glyphicon{
+.glyp-nav{
   font-size: 20px;
+}
+
+.glyp-faq{
+  font-size: 7px;
 }
 
 .modal-header{
