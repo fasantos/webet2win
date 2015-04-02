@@ -20,8 +20,8 @@ angular.module('WeBet2Win').config(function($routeProvider){
 		})
 
 		.when('/levels/:level', {
-			templateUrl: "assets/templates/levels/level.html",
-			controller: "LevelsLevelController"
+			templateUrl: "assets/templates/levels.html",
+			controller: "LevelsController"
 		})
 
 		.when('/start', {

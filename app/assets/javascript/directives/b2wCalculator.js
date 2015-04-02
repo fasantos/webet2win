@@ -5,21 +5,22 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 		templateUrl: "assets/templates/directives/b2wCalculator.html",
 		controller: function($scope){
 			// Calculator
-			$("betValue").on("keyup", function(){calculator();});
-			$("houseOdd").on("keyup", function(){calculator();});
-			$("freebet").on("change", function(){calculator();});
-			$("betfairOdd").on("keyup", function(){calculator();});
-			$("comission").on("keyup", function(){calculator();});
+			$("#betValue").on("keyup", function(){
+				calculator();
+			});
+			$("#houseOdd").on("keyup", function(){calculator();});
+			$("#freebet").on("change", function(){calculator();});
+			$("#betfairOdd").on("keyup", function(){calculator();});
+			$("#comission").on("keyup", function(){calculator();});
 
-			$scope.calculator = function(){
-				var betValue = Number($("betValue").value);
-			 	var houseOdd = Number($("houseOdd").value);
-			 	var freebet = $("freebet").checked;
-			 	var betfairOdd = Number($("betfairOdd").value);
-			 	var comission = Number($("comission").value);
+			calculator = function(){
+				var betValue = Number($("#betValue").val());
+			 	var houseOdd = Number($("#houseOdd").val());
+			 	var freebet = $("#freebet").is(':checked');
+			 	var betfairOdd = Number($("#betfairOdd").val());
+			 	var comission = Number($("#comission").val());
 			 	var result;
 
-			 	//alert(betValue);
 			 	if(isNaN(betValue) || isNaN(houseOdd) || isNaN(betfairOdd) || isNaN(comission)){
 					alert("Please enter a numeric value.");
 				}else{
@@ -29,23 +30,22 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 			 			result = calculateWithoutFreebet(betValue, houseOdd, betfairOdd, comission);
 			 		}
 				}
-			 	
 
-			 	$("val2Bet").value = Math.round(result[0] * 100) / 100;
-				$("balNeeded").value = Math.round(result[1] * 100) / 100;
-				$("winbetfair").value = Math.round(result[2] * 100) / 100;
-				$("winbethouse").value = Math.round(result[2] * 100) / 100;
+			 	$("#val2Bet").val(Math.round(result[0] * 100) / 100);
+				$("#balNeeded").val(Math.round(result[1] * 100) / 100);
+				$("#winbetfair").val(Math.round(result[2] * 100) / 100);
+				$("#winbethouse").val(Math.round(result[2] * 100) / 100);
 
 			}
 
-			$scope.calculateWithFreebet = function(betValue, houseOdd, betfairOdd, comission){
+			var calculateWithFreebet = function(betValue, houseOdd, betfairOdd, comission){
 				var valToBet = ((houseOdd - 1)/ (betfairOdd - (comission / 100))) * betValue;
 				var balNeeded = (betfairOdd - 1) * valToBet;
 				var win = ((houseOdd - 1) * betValue) - balNeeded;
 				return [valToBet, balNeeded, win]
 			}
 
-			$scope.calculateWithoutFreebet = function(betValue, houseOdd, betfairOdd, comission){
+			var calculateWithoutFreebet = function(betValue, houseOdd, betfairOdd, comission){
 				var valToBet = (houseOdd / (betfairOdd - (comission / 100))) * betValue;
 				var balNeeded = (betfairOdd - 1) * valToBet;
 				var win = ((houseOdd - 1) * betValue) - balNeeded;
@@ -53,17 +53,17 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 			}
 
 			//Odds Converter
-			$("quocient").on("keyup", function(){fractional();});
-			$("dividend").on("keyup", function(){
-				auxfunc();
-			});
-			$("signal").on("keyup", function(){american();});
-			$("signal").on("change", function(){american();});
-			$("aDividend").on("keyup", function(){american();});
+			$("#quocient").on("keyup", function(){
+				//alert(Number($("#quocient").val()));
+				fractional();});
+			$("#dividend").on("keyup", function(){auxfunc();});
+			$("#signal").on("keyup", function(){american();});
+			$("#signal").on("change", function(){american();});
+			$("#aDividend").on("keyup", function(){american();});
 
-			$scope.auxfunc = function(){
-				var dividend = Number($("dividend").value);
-				var sDividend = $("dividend").value;
+			var auxfunc = function(){
+				var dividend = Number($("#dividend").val());
+				var sDividend = $("#dividend").val();
 				if(sDividend !== ""){
 					if(dividend === 0){
 						alert("Dividend must be diferent then 0. ");
@@ -73,30 +73,30 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 				}
 			}
 
-			$scope.fractional = function(){
-				var quocient = Number($("quocient").value);
-			 	var dividend = Number($("dividend").value);
+			var fractional = function(){
+				var quocient = Number($("#quocient").val());
+			 	var dividend = Number($("#dividend").val());
 
 			 	if(isNaN(quocient) || isNaN(dividend)){
 					alert("Please enter a numeric value.");
 				}else{
-			 		$("fractRsul").value = Math.round((quocient / dividend) + 1 * 100) / 100;
+			 		$("#fractRsul").val(Math.round((quocient / dividend) + 1 * 100) / 100);
 			 	}
 			}
 
-			$scope.american = function(){
-			 	var signal = $("signal").value;
-			 	var aDividend = Number($("aDividend").value);
+			var american = function(){
+			 	var signal = $("#signal").val();
+			 	var aDividend = Number($("#aDividend").val());
 
 			 	if (signal !== "+" && signal !== "-"){
 			 		alert("Signal must be '+' or '-'.");
 			 	}else if (isNaN(aDividend)){
 			 		alert("Please enter a numeric value.");
 			 	}else if (signal === "+"){
-			        $("amRsul").value = Math.round(aDividend / 100 + 1 * 100) / 100;
+			        $("#amRsul").val(Math.round(aDividend / 100 + 1 * 100) / 100);
 			    }
 			    else{
-			       	$("amRsul").value = Math.round(100 / aDividend + 1 * 100) / 100;
+			       	$("#amRsul").val(Math.round(100 / aDividend + 1 * 100) / 100);
 			    }
 			}
 
@@ -127,16 +127,16 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 					});
 			};
 			function gp_convertIt() {
-				if (!$('gp_amount').value){
+				if (!$('gp_amount').val()){
 					return false;
 				} else {
-				var gp_from = $('gp_from').value;
-				var gp_to = $('gp_to').value;
-				var gp_amount = $('gp_amount').value;
+				var gp_from = $('gp_from').val();
+				var gp_to = $('gp_to').val();
+				var gp_amount = $('gp_amount').val();
 				//Ajax currency converter callback
 				$.getJSON( "http://www.geoplugin.net/currency_converter.gp?jsoncallback=?", { from:gp_from, to:gp_to, amount:gp_amount },
 					function(output){
-						$("gp_converted").value = output.to.amount;
+						$("gp_converted").val() = output.to.amount;
 					});
 				}
 			}

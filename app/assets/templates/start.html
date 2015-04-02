@@ -5,8 +5,8 @@
 			<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
 			<hr>
 			<p class="text-center" ng-repeat="lang in text.betfairtext"><b>{{lang.name}}:</b> {{lang.paragraf}}</p>			
-			<div class="text-center visible-md-block hidden-sm hidden-xs">{{startCtrl.pagecontent.betfairbanner.big}}</div>
-			<div class="text-center visible-xs-block hidden-md hidden-lg text-center">{{startCtrl.pagecontent.betfairbanner.small}}</div>
+			<div class="text-center hidden-xs" ng-bind-html="startCtrl.betfairbanner.big"></div>
+			<div class="text-center hidden-sm hidden-md hidden-lg" ng-bind-html="startCtrl.betfairbanner.small"></div>
 			<hr>
 			<p class="text-justify" ng-repeat="lang in text.content"><b>{{lang.name}}</b>{{lang.paragraf}}</p>
 			<hr>

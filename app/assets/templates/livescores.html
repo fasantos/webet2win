@@ -1,5 +1,8 @@
-<div class="container main">
-	<p class="text-center">
-		<iframe id="inscore-xdc-283120" src="http://www.livescore.in/free/283120/" width="624" height="500" frameborder="0" scrolling="no"></iframe>
-	</p>
+<div class="container main" ng-controller="LiveScoresController as liveScoresCtrl">
+	<div class="col-md-8 text-center" ng-bind-html="liveScoresCtrl.pagecontent"></div>
+	<div class="col-md-4 ">
+		<div class="adds" ng-repeat="sidebanner in liveScoresCtrl.sidebanners">
+			<div ng-bind-html="sidebanner"></div>
+		</div>
+	</div>
 </div>
