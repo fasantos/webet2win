@@ -101,45 +101,45 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 			}
 
 			//Ajax currency converter handler
-			google.load("jquery", "1.2.6");function gp_currencySymbols() {
-				$.getJSON("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?",
-					function(data){
-						var currencyCode = geoplugin_currencyCode();
-						var fromCurr = '';
-						var toCurr = '';
+			$.getJSON("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?",
+				function(data){
+					var currencyCode = geoplugin_currencyCode();
+					var fromCurr = '';
+					var toCurr = '';
 
-						$.each(data, function(i,item){
-							if ( currencyCode == i ) {
-								fromCurr = fromCurr + "<option value='"+i+"' selected>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
-							} else {
-								fromCurr = fromCurr + "<option value='"+i+"'>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
-							}
-						});          
-						$.each(data, function(i,item){
-							if ( currencyCode == 'USD' && i == 'EUR' ) {
-								toCurr = toCurr + "<option value='"+i+"' selected>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
-							} else {
-								toCurr = toCurr + "<option value='"+i+"'>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
-							}
-						});
-						$(fromCurr).appendTo("#gp_from");
-						$(toCurr).appendTo("#gp_to");
+					$.each(data, function(i,item){
+						if ( currencyCode == i ) {
+							fromCurr = fromCurr + "<option value='"+i+"' selected>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
+						} else {
+							fromCurr = fromCurr + "<option value='"+i+"'>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
+						}
+					});          
+					$.each(data, function(i,item){
+						if ( currencyCode == 'USD' && i == 'EUR' ) {
+							toCurr = toCurr + "<option value='"+i+"' selected>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
+						} else {
+							toCurr = toCurr + "<option value='"+i+"'>"+item.name+" "+(item.symbol?item.symbol:'')+"</option>";
+						}
 					});
-			};
-			function gp_convertIt() {
-				if (!$('gp_amount').val()){
+					$(fromCurr).appendTo("#gp_from");
+					$(toCurr).appendTo("#gp_to");
+			});
+			
+			$('#gp_convertIt').on('click', function(){
+				if (!$('#gp_amount').val()){
 					return false;
 				} else {
-				var gp_from = $('gp_from').val();
-				var gp_to = $('gp_to').val();
-				var gp_amount = $('gp_amount').val();
-				//Ajax currency converter callback
-				$.getJSON( "http://www.geoplugin.net/currency_converter.gp?jsoncallback=?", { from:gp_from, to:gp_to, amount:gp_amount },
-					function(output){
-						$("gp_converted").val() = output.to.amount;
-					});
+					var gp_from = $('#gp_from').val();
+					var gp_to = $('#gp_to').val();
+					var gp_amount = $('#gp_amount').val();
+					//Ajax currency converter callback
+					$.getJSON( "http://www.geoplugin.net/currency_converter.gp?jsoncallback=?", { from:gp_from, to:gp_to, amount:gp_amount },
+						function(output){
+							$("#gp_converted").val(output.to.amount);
+						});
 				}
-			}
+
+			});
 		}
 	};
 });
