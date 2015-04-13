@@ -1,18 +1,18 @@
 <div class="container main" ng-controller="AboutUsController as aboutusCtrl">
 	<div class="row" ng-repeat="text in aboutusCtrl.pagecontent.text">
-		<div class="col-md-6 aboutus" ng-repeat="upcontent in text.uplevel">
+		<div class="col-md-6 aboutus" ng-repeat="upcontent in text.uplevel"  ng-show="mainCtrl.showLang(text.lang)">
 			<h5 class="text-center"><b>{{upcontent.title}}</b></h5>
 			<p class="text-justify">{{upcontent.paragraf}}</p>
 		</div>
 	</div>
 	<div class="row" ng-repeat="text in aboutusCtrl.pagecontent.text">
-		<div class="col-md-12 aboutus" ng-repeat="content in text.midlevel">
+		<div class="col-md-12 aboutus" ng-repeat="content in text.midlevel" ng-show="mainCtrl.showLang(text.lang)">
 			<h5 class="text-center"><b>{{content.title}}</b></h5>
 			<p class="text-justify">{{content.paragraf}}</p>
 		</div>
 	</div>
 	<div class="row" ng-repeat="text in aboutusCtrl.pagecontent.text">
-		<div class="col-md-6 aboutus" ng-repeat="content in text.downlevel">
+		<div class="col-md-6 aboutus" ng-repeat="content in text.downlevel" ng-show="mainCtrl.showLang(text.lang)">
 			<h5 class="text-center"><b>{{content.title}}</b></h5>
 			<p class="text-justify">I{{content.paragraf}} <a ng-href="{{text.link.adress}}">{{content.link.text}}</a></p>
 		</div>

@@ -1,6 +1,6 @@
 <div class="container main" ng-controller="DepositController as depositCtrl">
 	<div class="row">
-		<div class="col-md-8" ng-repeat="text in depositCtrl.pagecontent">
+		<div class="col-md-8" ng-repeat="text in depositCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
 			<h5 class="text-center"><a href="">{{text.title}}</a></h5>
 			<p class="text-center">{{text.firstparagraf}}</p>
 			<p class="text-center" ng-repeat="method in text.methods">
@@ -12,13 +12,15 @@
 			</p>
 			<p class="text-justify" ng-repeat="paragraf in text.content">{{paragraf.paragraf}}</p>
 			<hr>
-			<div class="row">
-				<abbr title="START EARNING NOW!">
-					<a class="glyphicon glyphicon-arrow-left glyp-nav col-xs-12 text-left" href="#/start"></a>
-				</abbr>
+			<div class="row" ng-controller="StartController as startCtrl">
+				<div ng-repeat="text in startCtrl.pagecontent">
+					<abbr title="{{text.title}}">
+						<a class="glyphicon glyphicon-arrow-left glyp-nav col-xs-12 text-left" ui-sref="lang.start.level0"></a>
+					</abbr>
+				</div>
 			</div>					
 		</div>
-		<div class="col-md-4 ">
+		<div class="col-md-4">
 			<div class="adds" ng-repeat="sidebanner in depositCtrl.sidebanners">
 				<div ng-bind-html="sidebanner"></div>
 			</div>

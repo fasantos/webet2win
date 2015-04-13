@@ -1,5 +1,5 @@
 <div class="container main" ng-controller="FaqsController as faqsCtrl">
-	<div ng-repeat="text in faqsCtrl.pagecontent.text">
+	<div ng-repeat="text in faqsCtrl.pagecontent.text" ng-show="mainCtrl.showLang(text.lang)">
 		<h2 href=""><a>{{text.title}}</a></h2><br>
 		<ul style="list-style-type: none">
 			<li ng-repeat="question in text.questions">

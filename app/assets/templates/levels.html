@@ -1,1 +1,17 @@
-<h1>levels</h1>
+<div ng-controller="LevelsController as levelsctrl">
+	<div ng-repeat="text in levelsctrl.pagecontent.texts" ng-show="mainCtrl.showLang(text.lang)">		
+		<div ng-repeat="level in text.levels" ng-show="showLevel(level.level)">
+			<div >
+				<!--<button class="btn btn-info" ng-click="showLevel(level.level)"></button>-->
+				<p>{{text.intro}} {{level.level}} <b>(£/€/$):</b></p>
+				<hr>
+				<div ng-repeat="house in level.houses ">
+					<p><b>{{text.namelabel}} </b>{{house.name}}</p>
+					<p><b>{{text.bonuslabel}} </b>{{house.bonus}}</p>
+					<p><b>{{text.conditionslabel}} </b>{{house.conditions}}</p>
+					<p class="text-center" ng-bind-html="house.banner"></p>
+				</div>
+			</div>
+		</div>		
+	</div>
+</div>

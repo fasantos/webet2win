@@ -1,21 +1,21 @@
 <div class="collapse navbar-collapse navHeaderCollapse">
   <ul class="nav navbar-nav navbar-right">
-    <li ng-class="{'active': isPage('home')}"><a href="#/home">Home</a></li>
-    <li ng-class="{'active': isPage('system')}"><a href="#/system">Our System</a></li>
-    <li ng-class="{'active': isPage('start')}"><a href="#/start">Bonus Levels</a></li>
-    <li ng-class="{'active': isPage('deposit')}"><a href="#/deposit">How to Deposit</a></li>
-    <li ng-class="{'active': isPage('livescores')}"><a href="#/livescores">Live Scores</a></li>
+    <li ng-class="{'active': isPage('home')}"><a ui-sref="lang.home">Home</a></li>
+    <li ng-class="{'active': isPage('system')}"><a ui-sref="lang.system">Our System</a></li>
+    <li ng-class="{'active': isPage('start')}"><a ui-sref="lang.start.level0">Bonus Levels</a></li>
+    <li ng-class="{'active': isPage('deposit')}"><a ui-sref="lang.deposit">How to Deposit</a></li>
+    <li ng-class="{'active': isPage('livescores')}"><a ui-sref="lang.livescores">Live Scores</a></li>
     <li><a href="" data-toggle="modal" data-target="#calculator">Calculator</a></li>
-    <li ng-class="{'active': isPage('aboutus')}"><a href="#/aboutus">About Us</a></li>
-    <li ng-class="{'active': isPage('faqs')}"><a href="#/faqs">FAQS</a></li>
+    <li ng-class="{'active': isPage('aboutus')}"><a ui-sref="lang.aboutus">About Us</a></li>
+    <li ng-class="{'active': isPage('faqs')}"><a ui-sref="lang.faqs">FAQS</a></li>
     <li>
-      <a href="../index.html"><img class="icon" src="assets/images/ukflag.jpg"></a>
+      <a ng-href="{{setLang('en')}}"><img class="icon" src="assets/images/ukflag.jpg"></a>
     </li>
     <li>
-      <a href="../index_pt.html"><img class="icon" src="assets/images/ptflag.jpg" width="30" heigth="20"></a>
+      <a  ng-href="{{setLang('pt')}}"><img class="icon" src="assets/images/ptflag.jpg"></a>
     </li>
     <li>
-      <a href="../index_es.html"><img class="icon" src="assets/images/esflag.jpg" width="30" heigth="20"></a>
+      <a  ng-href="{{setLang('es')}}"><img class="icon" src="assets/images/esflag.jpg"></a>
     </li>
   </ul>
 </div>

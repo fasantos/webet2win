@@ -30,9 +30,9 @@
 }
 
 
-h3{
+h1{
   margin-top: 1%;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
 }
 
 .margin-fix-top-lg{
@@ -97,10 +97,6 @@ input, select, img, button{
   height: 30px;
 }
 
-/*input.input-fixer, select.input-fixer{
-  //padding: 0px;
-}*/
-
 .navbar-fixed-bottom .col-md-4{
   margin-top: 1%;
   margin-bottom: 1%;
@@ -113,7 +109,7 @@ input, select, img, button{
 }
 
 .adds{
-  margin: 10%;
+  margin-bottom: 10%;
 }
 
 .stub{

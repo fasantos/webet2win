@@ -1,6 +1,6 @@
 <div class="container main" ng-controller="CopyrightsController as copyrightsCtrl">
 	<div class="row" ng-repeat="text in copyrightsCtrl.pagecontent.texts">
-		<div class="col-md-12 aboutus" ng-repeat="policy in text.policies">
+		<div class="col-md-12 aboutus" ng-repeat="policy in text.policies" ng-show="mainCtrl.showLang(text.lang)">
 			<h4 class="text-center"><b>{{policy.title}}</b></h4>
 			<div ng-repeat="paragraf in policy.content">
 				<p class="text-justify">{{paragraf.paragraf}}</p>

@@ -1,22 +1,22 @@
 <div class="container main">
 	<div class="row">
 		<div class="col-md-4" ng-controller="SystemController as systemCtrl">
-			<div ng-repeat="text in systemCtrl.pagecontent">
-				<h5 class="text-center"><a href="en/works.html">{{text.title}}</a></h5>
+			<div ng-repeat="text in systemCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
+				<h5 class="text-center"><a href="#/system">{{text.title}}</a></h5>
 				<p class="text-justify" ng-repeat="lang in text.preview">{{lang.paragraf}}</p>
-				<a href="#/system" class="btn btn-default">Read More</a>
+				<a ui-sref="lang.system" class="btn btn-default">Read More</a>
 			</div>
 		</div>
 		<div class="col-md-4" ng-controller="StartController as startCtrl">
-			<div ng-repeat="text in startCtrl.pagecontent">
-				<h5 class="text-center"><a href="en/start.html">{{text.title}}</a></h5>
+			<div ng-repeat="text in startCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
+				<h5 class="text-center"><a href="#/start">{{text.title}}</a></h5>
 				<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
-				<a href="#/start" class="btn btn-default">Read More</a>
+				<a ui-sref="lang.start" class="btn btn-default">Read More</a>
 			</div>
 		</div>
 		<div class="col-md-4" ng-controller="DepositController as depositCtrl">
-			<div ng-repeat="text in depositCtrl.pagecontent">
-				<h5 class="text-center"><a href="">{{text.title}}</a></h5>
+			<div ng-repeat="text in depositCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
+				<h5 class="text-center"><a href="#/deposit">{{text.title}}</a></h5>
 				<p class="text-center">{{text.firstparagraf}}</p>
 				<p class="text-center" ng-repeat="method in text.methods">
 					<b>{{method.prefix}}</b>
@@ -25,8 +25,8 @@
 						</a>
 					<b>{{method.sufix}}</b>
 				</p>
+				<a ui-sref="lang.deposit" class="btn btn-default">Read More</a>				
 			</div>
-			<a href="#/deposit" class="btn btn-default">Read More</a>
 		</div>
 	</div>
 </div>

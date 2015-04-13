@@ -1,0 +1,14 @@
+<div ng-controller="StartController as startCtrl">
+	<div ng-repeat="text in startCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
+		<h5 class="text-center"><a href="">{{text.title}}</a></h5>
+		<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
+		<hr>
+		<p class="text-center" ng-repeat="lang in text.betfairtext"><b>{{lang.name}}:</b> {{lang.paragraf}}</p>			
+		<div class="text-center hidden-xs" ng-bind-html="startCtrl.betfairbanner.big"></div>
+		<div class="text-center hidden-sm hidden-md hidden-lg" ng-bind-html="startCtrl.betfairbanner.small"></div>
+		<hr>
+		<p class="text-justify" ng-repeat="lang in text.content"><b>{{lang.name}}</b>{{lang.paragraf}}</p>
+		<hr>
+		<p class="text-justify" ng-repeat="lang in text.levelstext">{{lang.paragraf}}</p>		
+	</div>
+</div>
