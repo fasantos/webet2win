@@ -1,3 +1,63 @@
 <div ng-controller="MainController as mainCtrl">
-	<div ui-view></div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a ui-sref="lang.home" class="navbar-brand"> WeBet2Win</a>
+      </div>
+      <b2w-page-nav></b2w-page-nav>
+    </div>
+  </div>
+
+  <div class="margin-fix-top-lg hidden-xs hidden-sm hidden-md"></div>
+  <div class="margin-fix-top-md hidden-xs hidden-sm hidden-lg"></div>
+  <div class="margin-fix-top-sm hidden-xs hidden-lg hidden-md"></div>
+  <div class="margin-fix-top-xs hidden-sm hidden-md hidden-lg"></div>
+
+  <div class="container">
+    <div class="text-center hidden-sm hidden-xs">
+      <object type="application/x-shockwave-flash" id="ae895b8ee3f1d433abb6ce0f9307fe64f" data="http://imstore.bet365affiliates.com/365_045355-508-208-2-149-1-29503.aspx" width="660" height="100">
+        <param name="movie" value="http://imstore.bet365affiliates.com/365_045355-508-208-2-149-1-29503.aspx">
+        <param name="quality" value="high">
+        <param name="wmode" value="transparent">
+        <param name="allowScriptAccess" value="always">
+        <param name="allowNetworking" value="external">
+        <a href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=29503&amp;AffiliateCode=365_045355&amp;CID=194&amp;DID=208&amp;TID=1&amp;PID=149&amp;LNG=1" target="_blank">
+          <img src="http://imstore.bet365affiliates.com/?AffiliateCode=365_045355&amp;CID=194&amp;DID=208&amp;TID=1&amp;PID=149&amp;LNG=1" style="border:0;" alt="bet365">
+        </a>
+      </object>   
+    </div>
+    <div class="text-center hidden-md hidden-lg">
+      <object type="application/x-shockwave-flash" id="a58fe621d281546ea897997c37e92e53b" data="http://imstore.bet365affiliates.com/365_045355-418-149-2-149-1-29503.aspx" width="360" height="90">
+        <param name="movie" value="http://imstore.bet365affiliates.com/365_045355-418-149-2-149-1-29503.aspx">
+        <param name="quality" value="high">
+        <param name="wmode" value="transparent">
+        <param name="allowScriptAccess" value="always">
+        <param name="allowNetworking" value="external">
+        <a href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=29503&amp;AffiliateCode=365_045355&amp;CID=194&amp;DID=149&amp;TID=1&amp;PID=149&amp;LNG=1" target="_blank">
+          <img src="http://imstore.bet365affiliates.com/?AffiliateCode=365_045355&amp;CID=194&amp;DID=149&amp;TID=1&amp;PID=149&amp;LNG=1" style="border:0;" alt="bet365">
+        </a>
+      </object>
+    </div>
+  </div>
+
+  <div class="container text-center" ng-repeat="text in mainCtrl.pagecontent.text" ng-show="mainCtrl.showLang(text.lang)">
+    <h1>{{text.maintitle}}</h1>
+  </div>
+
+  <div ui-view></div>
+
+  <div class="margin-fix-bottom-lg hidden-xs hidden-sm hidden-md"></div>
+  <div class="margin-fix-bottom-md hidden-xs hidden-sm hidden-lg"></div>
+  <div class="margin-fix-bottom-sm hidden-xs hidden-lg hidden-md"></div>
+  <div class="margin-fix-bottom-xs hidden-sm hidden-md hidden-lg"></div>
+
+  <b2w-page-footer></b2w-page-footer>
+
+  
+  <b2w-calculator></b2w-calculator>
 </div>

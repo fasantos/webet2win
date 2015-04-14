@@ -4,13 +4,8 @@
 			<h4 class="text-center"><b>{{policy.title}}</b></h4>
 			<div ng-repeat="paragraf in policy.content">
 				<p class="text-justify">{{paragraf.paragraf}}</p>
-				<ul>
-					<li ng-repeat="link in paragraf.links"><a class="text-justify" ng-href="{{link.adress}}">{{link.text}}</a></li>
-				</ul>
+				<p class="text-center" ng-repeat="link in paragraf.links"><a class="text-justify" ng-href="{{link.adress}}">{{link.text}}</a></p>
 			</div>
 		</div>
 	</div>
-	<p class="col-xs-12 text-center">
-		<a href="http://www.geoplugin.com/geolocation/" target="_new">IP Geolocation</a> by <a href="http://www.geoplugin.com/" target="_new">geoPlugin</a>
-	</p>
 </div>

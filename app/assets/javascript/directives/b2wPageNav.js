@@ -10,6 +10,8 @@ angular.module('WeBet2Win').directive('b2wPageNav', function(){
 			$scope.setLang = function(language){
 				return $state.href($state.current.name, {lang: language});
 			};
+
+			$scope.navtext = navtext;
 		}
 	};
 });

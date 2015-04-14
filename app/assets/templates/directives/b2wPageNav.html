@@ -1,13 +1,13 @@
-<div class="collapse navbar-collapse navHeaderCollapse">
-  <ul class="nav navbar-nav navbar-right">
-    <li ng-class="{'active': isPage('home')}"><a ui-sref="lang.home">Home</a></li>
-    <li ng-class="{'active': isPage('system')}"><a ui-sref="lang.system">Our System</a></li>
-    <li ng-class="{'active': isPage('start')}"><a ui-sref="lang.start.level0">Bonus Levels</a></li>
-    <li ng-class="{'active': isPage('deposit')}"><a ui-sref="lang.deposit">How to Deposit</a></li>
-    <li ng-class="{'active': isPage('livescores')}"><a ui-sref="lang.livescores">Live Scores</a></li>
-    <li><a href="" data-toggle="modal" data-target="#calculator">Calculator</a></li>
-    <li ng-class="{'active': isPage('aboutus')}"><a ui-sref="lang.aboutus">About Us</a></li>
-    <li ng-class="{'active': isPage('faqs')}"><a ui-sref="lang.faqs">FAQS</a></li>
+<div class="collapse navbar-collapse navHeaderCollapse" >
+  <ul class="nav navbar-nav navbar-right" ng-repeat="text in navtext.text" ng-show="mainCtrl.showLang(text.lang)">
+    <li ng-class="{'active': isPage('home')}"><a ui-sref="lang.home">{{text.home}}</a></li>
+    <li ng-class="{'active': isPage('system')}"><a ui-sref="lang.system">{{text.system}}</a></li>
+    <li ng-class="{'active': isPage('start')}"><a ui-sref="lang.start.level0">{{text.level0}}</a></li>
+    <li ng-class="{'active': isPage('deposit')}"><a ui-sref="lang.deposit">{{text.deposit}}</a></li>
+    <li ng-class="{'active': isPage('livescores')}"><a ui-sref="lang.livescores">{{text.livescores}}</a></li>
+    <li><a href="" data-toggle="modal" data-target="#calculator">{{text.calculator}}</a></li>
+    <li ng-class="{'active': isPage('aboutus')}"><a ui-sref="lang.aboutus">{{text.aboutus}}</a></li>
+    <li ng-class="{'active': isPage('faqs')}"><a ui-sref="lang.faqs">{{text.faqs}}</a></li>
     <li>
       <a ng-href="{{setLang('en')}}"><img class="icon" src="assets/images/ukflag.jpg"></a>
     </li>

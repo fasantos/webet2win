@@ -2,7 +2,6 @@
 	<div ng-repeat="text in levelsctrl.pagecontent.texts" ng-show="mainCtrl.showLang(text.lang)">		
 		<div ng-repeat="level in text.levels" ng-show="showLevel(level.level)">
 			<div >
-				<!--<button class="btn btn-info" ng-click="showLevel(level.level)"></button>-->
 				<p>{{text.intro}} {{level.level}} <b>(£/€/$):</b></p>
 				<hr>
 				<div ng-repeat="house in level.houses ">

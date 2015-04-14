@@ -1,16 +1,20 @@
 <div class="container main">
 	<div class="row">
 		<div class="col-md-8">
-			<p class="text-center" ng-controller="StartController as startCtrl">
-				 <a class="col-md-2 btn btn-info btn" ng-repeat="level in startCtrl.levels" 
-				 href="{{startCtrl.levelurl(level)}}">{{level}}</a>
-			</p>
+			<div ng-controller="LevelsController as levelsctrl">
+				<p class="text-center" ng-repeat="text in levelsctrl.pagecontent.texts" ng-show="mainCtrl.showLang(text.lang)">
+					 <a class="col-md-2 btn btn-info btn" ng-repeat="level in text.levels" 
+					 href="{{levelsctrl.levelurl(level.level)}}">{{level.level}}</a>
+				</p>
+			</div>
 			<br><br>
 			<div ui-view></div>
-			<p class="text-center" ng-controller="StartController as startCtrl">
-				 <a class="col-md-2 btn btn-info btn" ng-repeat="level in startCtrl.levels" 
-				 href="{{startCtrl.levelurl(level)}}">{{level}}</a>
-			</p>
+			<div ng-controller="LevelsController as levelsctrl">
+				<p class="text-center" ng-repeat="text in levelsctrl.pagecontent.texts" ng-show="mainCtrl.showLang(text.lang)">
+					 <a class="col-md-2 btn btn-info btn" ng-repeat="level in text.levels" 
+					 href="{{levelsctrl.levelurl(level.level)}}">{{level.level}}</a>
+				</p>
+			</div>
 			<br><br><hr>						
 			<div class="row">
 				<div ng-controller="SystemController as systemCtrl">
