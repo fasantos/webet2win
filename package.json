@@ -10,7 +10,8 @@
     "npm": "2.7.6"
     },
   "dependencies":{
-    "bower": "latest"
+    "bower": "^1.3.1",
+    "express": "^4.x"
   },
   "devDependencies": {
     "karma": "~0.10",
