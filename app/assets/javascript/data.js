@@ -170,6 +170,14 @@ var levelspagecontent =
 					conditions: "To release the bonus bet 150€ at odds of 2.00 or greater", 
 					banner: '<iframe id="itsfogo86043" name="itsfogo86043" src="http://adserver.itsfogo.com/default.aspx?t=f&v=1&zoneid=86043" frameborder="0" scrolling="no"></iframe>'
 				}]
+			},{
+				level: "Level 2",
+				houses: [{
+					name: "test 2",
+					bonus: "100% sign-up bonus up to 50€",
+					conditions: "To release the bonus bet 150€ at odds of 2.00 or greater", 
+					banner: '<iframe id="itsfogo86043" name="itsfogo86043" src="http://adserver.itsfogo.com/default.aspx?t=f&v=1&zoneid=86043" frameborder="0" scrolling="no"></iframe>'
+				}]
 			}]
 		}]
 	};
