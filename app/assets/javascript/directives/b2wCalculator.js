@@ -103,7 +103,7 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 			//Ajax currency converter handler
 			$.getJSON("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?",
 				function(data){
-					var currencyCode = geoplugin_currencyCode();
+					var currencyCode = "";//geoplugin_currencyCode();
 					var fromCurr = '';
 					var toCurr = '';
 

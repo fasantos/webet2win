@@ -74,7 +74,9 @@ angular.module('WeBet2Win').config(function($routeProvider, $stateProvider, $url
 		})
 
 	$urlRouterProvider.otherwise(function($stateParams){
-		if (geoplugin_countryCode() == "AO" || geoplugin_countryCode() == "BR" ||
+		return "en/home";
+
+		/*if (geoplugin_countryCode() == "AO" || geoplugin_countryCode() == "BR" ||
 			geoplugin_countryCode() == "CV" || geoplugin_countryCode() == "MZ" ||
 			geoplugin_countryCode() == "PT" || geoplugin_countryCode() == "TL" ||
 			geoplugin_countryCode() == "ST" || geoplugin_countryCode() == "MO" ||
@@ -97,6 +99,7 @@ angular.module('WeBet2Win').config(function($routeProvider, $stateProvider, $url
 		} else{
 
 			return "en/home";
-		}	
+		}
+		*/
 	});		
 });
