@@ -11,7 +11,7 @@
 			<div ng-repeat="text in startCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
 				<h5 class="text-center"><a href="#/start/level0">{{text.title}}</a></h5>
 				<p class="text-justify" ng-repeat="lang in text.preview"><b>{{lang.name}}</b> - {{lang.paragraf}}</p>
-				<a ui-sref="lang.start" class="btn btn-default">Read More</a>
+				<a ui-sref="lang.start.level0" class="btn btn-default">Read More</a>
 			</div>
 		</div>
 		<div class="col-md-4" ng-controller="DepositController as depositCtrl">
