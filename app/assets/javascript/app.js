@@ -33,7 +33,7 @@ angular.module('WeBet2Win', [
 })
 
 .controller('LevelsController', function($scope, $sce, $location, $stateParams){
-
+	var text, level, house;
 	this.pagecontent = levelspagecontent;
 	for(text in this.pagecontent.texts){
 		for(level in this.pagecontent.texts[text].levels){
