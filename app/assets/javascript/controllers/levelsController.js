@@ -18,5 +18,5 @@ angular.module('WeBet2Win').controller('LevelsController', function($scope, $sce
 	this.levelurl= function(level){
 		return '#/' + $stateParams.lang + '/start/' + level;
 	}
-})
+});
 
