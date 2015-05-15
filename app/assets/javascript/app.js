@@ -7,6 +7,16 @@ angular.module('WeBet2Win', [
 	'ui.router'
 ])
 
+.controller('MainController', function($stateParams, $sce){
+	this.pagecontent = mainpagecontent.text;
+	this.banner = {};
+	this.banner.big = $sce.trustAsHtml(mainpagecontent.banner.big);
+	this.banner.small = $sce.trustAsHtml(mainpagecontent.banner.small);
+	this.showLang = function(lang){
+		return $stateParams.lang === lang;
+	};
+})
+
 .controller('AboutUsController', function(){
 	this.pagecontent = aboutustpagecontent;
 })
@@ -61,13 +71,6 @@ angular.module('WeBet2Win', [
 		this.sidebanners.push($sce.trustAsHtml(systempagecontent.sidebanners[i].code));
 	};
 
-})
-
-.controller('MainController', function($stateParams){
-	this.pagecontent = mainPagecontent;
-	this.showLang = function(lang){
-		return $stateParams.lang === lang;
-	};
 })
 
 .controller('StartController', 

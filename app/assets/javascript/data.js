@@ -1,6 +1,6 @@
 
 //Main page text, includes dinamic SEO content (meta tags)
-var mainPagecontent = 
+var mainpagecontent = 
 	{
 		text: [{
 			lang: 'en',
@@ -15,7 +15,10 @@ var mainPagecontent =
 			metatitle: "We Bet 2 Win - Apuestas Premium Deporte Bonus Sistema",
 			maintitle: "En Construcion"
 		}],
-		
+		banner: {
+			big: '<object type="application/x-shockwave-flash" id="ae895b8ee3f1d433abb6ce0f9307fe64f" data="http://imstore.bet365affiliates.com/365_045355-508-208-2-149-1-29503.aspx" width="660"height="100"><param name="movie" value="http://imstore.bet365affiliates.com/365_045355-508-208-2-149-1-29503.aspx" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="external" /><a href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=29503&amp;AffiliateCode=365_045355&amp;CID=194&amp;DID=208&amp;TID=1&amp;PID=149&amp;LNG=1" target="_blank"><img src="http://imstore.bet365affiliates.com/?AffiliateCode=365_045355&amp;CID=194&amp;DID=208&amp;TID=1&amp;PID=149&amp;LNG=1" style="border:0;" alt="bet365"></img></a></object>',
+			small: '<object type="application/x-shockwave-flash" id="a58fe621d281546ea897997c37e92e53b" data="http://imstore.bet365affiliates.com/365_045355-418-149-2-149-1-29503.aspx" width="360" height="90"><param name="movie" value="http://imstore.bet365affiliates.com/365_045355-418-149-2-149-1-29503.aspx" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="external" /><a href="http://imstore.bet365affiliates.com/Tracker.aspx?AffiliateId=29503&amp;AffiliateCode=365_045355&amp;CID=194&amp;DID=149&amp;TID=1&amp;PID=149&amp;LNG=1" target="_blank"><img src="http://imstore.bet365affiliates.com/?AffiliateCode=365_045355&amp;CID=194&amp;DID=149&amp;TID=1&amp;PID=149&amp;LNG=1" style="border:0;" alt="bet365"></img></a></object>'
+		}
 	};
 
 //Text for the navigation menu
