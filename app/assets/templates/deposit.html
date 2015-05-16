@@ -13,7 +13,7 @@
 			<p class="text-justify" ng-repeat="paragraf in text.content">{{paragraf.paragraf}}</p>
 			<hr>
 			<div class="row" ng-controller="StartController as startCtrl">
-				<div ng-repeat="text in startCtrl.pagecontent">
+				<div ng-repeat="text in startCtrl.pagecontent" ng-show="mainCtrl.showLang(text.lang)">
 					<abbr title="{{text.title}}">
 						<a class="glyphicon glyphicon-arrow-left glyp-nav col-xs-12 text-left" ui-sref="lang.start.level0"></a>
 					</abbr>

@@ -68,7 +68,11 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-  <!--<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>-->
+
+  <!-- white listing geoplugin -->
+  <div ng-controller="MainController as mainCtrl">
+    <script language="JavaScript" ng-src="{{mainCtrl.geoplugin}}" type="text/javascript"></script>
+  </div>
 
 </body>
 </html>

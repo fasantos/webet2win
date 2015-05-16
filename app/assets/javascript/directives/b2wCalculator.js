@@ -3,10 +3,9 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 		replace: true,
 		restrict: "E",
 		templateUrl: "assets/templates/directives/b2wCalculator.html",
-		controller: function($scope){
+		controller: function($scope, $sce){
 
 			this.pagetext = calctext.text;
-			console.log(this.pagetext);
 
 			// Calculator
 			$("#betValue").on("keyup", function(){
@@ -105,9 +104,9 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 			}
 
 			//Ajax currency converter handler
-			$.getJSON("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?",
+			$.getJSON($sce.trustAsUrl("http://www.geoplugin.net/currency_symbols.gp?format=json&jsoncallback=?"),
 				function(data){
-					var currencyCode = "";//geoplugin_currencyCode();
+					var currencyCode = geoplugin_currencyCode();
 					var fromCurr = '';
 					var toCurr = '';
 
@@ -137,7 +136,7 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 					var gp_to = $('#gp_to').val();
 					var gp_amount = $('#gp_amount').val();
 					//Ajax currency converter callback
-					$.getJSON( "http://www.geoplugin.net/currency_converter.gp?jsoncallback=?", { from:gp_from, to:gp_to, amount:gp_amount },
+					$.getJSON($sce.trustAsUrl("http://www.geoplugin.net/currency_converter.gp?jsoncallback=?"), { from:gp_from, to:gp_to, amount:gp_amount },
 						function(output){
 							$("#gp_converted").val(output.to.amount);
 						});
