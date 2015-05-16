@@ -1,9 +1,9 @@
 <div class="modal fade" id="calculator" role="dialog">
   <div class="modal-dailog">
     <div class="container">
-      <div class="modal-content">
+      <div class="modal-content" ng-repeat="text in b2wCalculatorCtrl.pagetext" ng-show="mainCtrl.showLang(text.lang)">
         <div class="modal-header">
-          <h1 class="text-info"><img src="assets/images/calculator.jpg" class="calIcon"><b> WeBet2Win Calculator</b></h1>
+          <h1 class="text-info"><img src="assets/images/calculator.jpg" class="calIcon"><b> {{text.calculator}}</b></h1>
         </div>
         <div class="modal-body">
           <form action="#" class="row">
@@ -11,22 +11,22 @@
               <div class="col-md-3 "> 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Bookmaker</h3>
+                    <h3 class="panel-title">{{text.bookmaker}}</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row ">
-                      <label class="col-xs-7 text-info">Bet value (€):</label>
+                      <label class="col-xs-7 text-info">{{text.betvalue}} (€):</label>
                       <input class="col-xs-4 text-right input-fixer" id="betValue" size="5">
                     </div>
                     <div class="row ">
-                      <label class="col-xs-7 text-info">Odd:</label>
+                      <label class="col-xs-7 text-info">{{text.odd}}:</label>
                       <input class="col-xs-4 text-right input-fixer" id="houseOdd" size="5">
                     </div>
                     <div class="row stub">
                       <label class="col-xs-7 text-info">.</label>
                     </div>
                     <div class="row ">
-                      <label class="col-xs-7 text-info">Freebet:</label>
+                      <label class="col-xs-7 text-info">{{text.freebet}}:</label>
                       <input class="col-xs-4 text-right input-fixer" type="checkbox" id="freebet">
                     </div>                        
                   </div>
@@ -35,15 +35,15 @@
               <div class="col-md-4"> 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Betfair</h3>
+                    <h3 class="panel-title">{{text.betfair}}</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row ">
-                      <label class="col-xs-8 text-info">Odd:</label>
+                      <label class="col-xs-8 text-info">{{text.odd}}:</label>
                       <input class="col-xs-3 text-right input-fixer" id="betfairOdd">
                     </div>
                     <div class="row ">
-                      <label class="col-xs-8 text-info">Commission (%):</label>
+                      <label class="col-xs-8 text-info">{{text.commission}} (%):</label>
                       <input class="col-xs-3 text-right input-fixer" list="comissions" value="5.5" id="comission" type="text">
                       <datalist id="comissions">
                         <option value="0">
@@ -70,11 +70,11 @@
                       </datalist>
                     </div>
                     <div class="row ">
-                      <label class="col-xs-8 text-info">Value to bet (€):</label>
+                      <label class="col-xs-8 text-info">{{text.valuetobet}} (€):</label>
                       <input class="col-xs-3 text-right input-fixer" id="val2Bet" size="4" disabled>
                     </div>
                     <div class="row ">
-                      <label class="col-xs-8 text-info">Balance needed (€):</label>
+                      <label class="col-xs-8 text-info">{{text.balanceneeded}} (€):</label>
                       <input class="col-xs-3 text-right input-fixer" id="balNeeded" size="4" disabled>
                     </div>
                   </div>
@@ -85,11 +85,11 @@
               <div class="col-md-4"> 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Odds Converter</h3>
+                    <h3 class="panel-title">{{text.oddsconverter}}</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row ">
-                      <label class="col-xs-4 text-info">Fractional:</label>
+                      <label class="col-xs-4 text-info">{{text.fractional}}:</label>
                     </div>
                     <div class="row">
                       <input class="col-xs-3 col-xs-offset-1 text-right input-fixer" id="quocient">
@@ -99,7 +99,7 @@
                       <input class="col-xs-2 text-right input-fixer" id="fractRsul" disabled>
                     </div>
                     <div class="row ">
-                      <label class="col-xs-4 text-info">American:</label>
+                      <label class="col-xs-4 text-info">{{text.american}}:</label>
                     </div>
                     <div class="row ">
                       <input class="col-xs-3 col-xs-offset-1 text-right input-fixer" list="signals" value="+" id="signal">
@@ -120,15 +120,15 @@
               <div class="col-md-7"> 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Total Earnings (Bonus + OR - This value)</h3>
+                    <h3 class="panel-title">{{text.totalearnings}}</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row ">
-                      <label class="col-xs-8 text-info">If you win at Betfair (€):</label>
+                      <label class="col-xs-8 text-info">{{text.winbetfair}} (€):</label>
                       <input class="col-xs-3  text-right input-fixer" id="winbetfair" size="4" disabled>
                     </div>
                     <div class="row ">
-                      <label class="col-xs-8 text-info">If you win at Betting House (€):</label>
+                      <label class="col-xs-8 text-info">{{text.winbettinghouse}} (€):</label>
                       <input class="col-xs-3  text-right input-fixer" id="winbethouse" size="4" disabled>
                     </div>
                   </div>
@@ -139,7 +139,7 @@
               <div class="col-md-4"> 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Currency Converter</h3>
+                    <h3 class="panel-title">{{text.currencyconverter}}</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row">
@@ -150,13 +150,13 @@
                       </select>
                     </div>
                     <div class="row">
-                      <label class="col-xs-1 text-info col-xs-offset-2">to</label>
+                      <label class="col-xs-1 text-info col-xs-offset-2">{{text.to}}</label>
                       <select class="col-xs-5 col-xs-offset-3 text-right input-fixer" id="gp_to">
                         
                       </select>
                     </div>
                     <div class="row">
-                      <button class="col-xs-4 text-info col-xs-offset-1" id='gp_convertIt'>Convert It</button>
+                      <button class="col-xs-4 text-info col-xs-offset-1" id='gp_convertIt'>{{text.convertit}}</button>
                       <label class="col-xs-1 text-info"></label>
                       <input class="col-xs-5 text-right input-fixer" id="gp_converted" disabled>
                     </div>
@@ -168,9 +168,9 @@
         </div>
           <div class="modal-footer">
             <div class="row">
-            <p class="col-md-8 text-left">How to use our WeBet2Win Calculator? Learn with our <a href="">Quick Use Tutorial</a>.</p>
+            <p class="col-md-8 text-left">{{text.howtouse}} <a href="">{{text.tutorial}}</a>.</p>
             <div class="col-md-3"></div>
-            <button class="col-md-1 btn btn-default" data-dismiss="modal">Close</button>
+            <button class="col-md-1 btn btn-default" data-dismiss="modal">{{text.close}}</button>
           </div>
         </div>
       </div>

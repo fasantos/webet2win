@@ -4,6 +4,10 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 		restrict: "E",
 		templateUrl: "assets/templates/directives/b2wCalculator.html",
 		controller: function($scope){
+
+			this.pagetext = calctext.text;
+			console.log(this.pagetext);
+
 			// Calculator
 			$("#betValue").on("keyup", function(){
 				calculator();
@@ -140,6 +144,8 @@ angular.module('WeBet2Win').directive('b2wCalculator', function(){
 				}
 
 			});
-		}
+
+		},
+		controllerAs: 'b2wCalculatorCtrl'
 	};
 });
